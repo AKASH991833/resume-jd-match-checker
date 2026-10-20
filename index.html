@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Resume vs Job Description Match - free keyword checker</title>
+<meta name="description" content="Paste your resume and a job description. See your keyword match score, the skills you are missing and quick fixes. Free, private, runs in your browser.">
+<meta name="theme-color" content="#0a0a12">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="./"><span class="logo">✓</span><span>Resume Match</span></a><div class="hd-actions"><button class="iconbtn" id="themeBtn" type="button" aria-label="Switch dark or light mode">☀️ Light</button></div></div></header>
+<main class="wrap">
+ <section class="hero"><span class="badge">🔒 Private · Nothing is uploaded or saved</span>
+  <h1>Apply se pehle check karo: <em>resume vs job.</em></h1>
+  <p>Paste your resume and the job description. Get a keyword match score, missing skills and simple fixes. Runs fully in your browser.</p></section>
+ <section class="inputs">
+  <div class="card"><div class="ih"><h2>1. Your resume (text)</h2><div class="row"><label class="btn ghost sm" for="fileR">Open .txt</label><input type="file" id="fileR" accept=".txt,.md,text/plain" class="sr"></div></div>
+   <textarea id="resume" rows="14" maxlength="30000" placeholder="Paste your resume text here (copy from your PDF or Word file)..."></textarea><div class="muted small"><span id="rc">0</span> words</div></div>
+  <div class="card"><div class="ih"><h2>2. Job description</h2><div class="row"><label class="btn ghost sm" for="fileJ">Open .txt</label><input type="file" id="fileJ" accept=".txt,.md,text/plain" class="sr"></div></div>
+   <textarea id="jd" rows="14" maxlength="30000" placeholder="Paste the job description here..."></textarea><div class="muted small"><span id="jc">0</span> words</div></div>
+ </section>
+ <div class="row cta"><button class="btn" id="go" type="button">🔍 Check match</button><button class="btn ghost" id="sample" type="button">Try sample</button><button class="btn ghost" id="clear" type="button">Clear</button></div>
+ <section id="out" hidden>
+  <div class="scorebox card">
+   <div class="ring" id="ring"><b id="score">0</b><span>%</span></div>
+   <div class="verdict"><h2 id="verdict"></h2><p class="muted" id="vsub"></p><p class="muted small">This is a keyword match, not a real ATS result. Use it to find gaps, then decide honestly.</p></div>
+  </div>
+  <div class="two">
+   <div class="card"><h3>✅ Matched <span class="count" id="mc"></span></h3><div class="chips" id="matched"></div></div>
+   <div class="card"><h3>⚠️ Missing from your resume <span class="count" id="xc"></span></h3><p class="muted small">Add a keyword only if you truly have that skill, and show it in a project or job line.</p><div class="chips" id="missing"></div></div>
+  </div>
+  <div class="card" id="otherCard"><h3>Other words the job repeats</h3><p class="muted small">Not in the skills list, but used often in the job description.</p><div class="chips" id="other"></div></div>
+  <div class="two">
+   <div class="card"><h3>📋 Resume health</h3><ul class="checks" id="health"></ul></div>
+   <div class="card"><h3>💡 What to do next</h3><ol class="tipsl" id="tips"></ol></div>
+  </div>
+  <div class="card"><h3>Job description with highlights</h3><p class="muted small"><mark class="m ok">Green</mark> = in your resume. <mark class="m bad">Red</mark> = missing.</p><div class="jdview" id="jdview"></div></div>
+ </section>
+ <section class="card tips"><h2>How it works</h2><ol class="muted"><li>It finds skills and tools from a built-in list of about 300 IT and general skills, with short forms like k8s or js.</li><li>It also lists other words the job repeats a lot.</li><li>Score = how much of the job's keywords (weighted by how often and how strongly they appear) show up in your resume.</li></ol>
+ <p class="muted small">Limits: lite version. It reads plain text only, does not understand synonyms beyond its list, and cannot judge how good your experience is. Real ATS tools differ. A high score does not guarantee a call, and a low score does not mean you should not apply.</p></section>
+</main>
+<footer class="foot"><div class="wrap"><span>Everything runs in your browser. Your text never leaves your device.</span><span>Built by Akash Vishwakarma</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="skills.js"></script><script src="sample.js"></script><script src="app.js"></script>
+</body></html>
