@@ -15,3 +15,4 @@ mark.m{padding:1px 5px;border-radius:5px;color:var(--ink)}mark.ok{background:rgb
 .tips{margin-top:26px}.tips ol{padding-left:20px}
 @media(max-width:820px){.inputs,.two{grid-template-columns:1fr}.inputs textarea{min-height:200px}.ring{width:108px;height:108px}.ring b{font-size:32px}}
 @media print{body::before,header.top,.inputs,.cta,.tips,.foot{display:none!important}body{background:#fff;color:#000}}
+.ring{transition:box-shadow .2s}
